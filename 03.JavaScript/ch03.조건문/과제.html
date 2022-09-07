@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function age() {
+            const thisYear = new Date().getFullYear();
+            const thisMonth = new Date().getMonth() + 1;
+            const today = new Date().getDate();
+            const birth = document.getElementById('age').value;
+            const ageYear = Number(birth[0]+birth[1]+birth[2]+birth[3]);
+            const ageMonth = Number(birth[4] + birth[5]);
+            const ageDay = Number(birth[6] + birth[7]);
+            const ageRes = document.getElementById('ageRes');
+            
+            if (thisYear < ageYear) {
+                ageRes.innerHTML = '<h4>아직 태어나지도 않았군요!</h4>';
+            } else if (thisYear === ageYear) {
+                if (thisMonth < ageMonth) {
+                    ageRes.innerHTML = '<h4>아직 태어나지도 않았군요!</h4>';
+                } else if (thisMonth === ageMonth) {
+                    if (today < ageDay){
+                        ageRes.innerHTML = '<h4>아직 태어나지도 않았군요!</h4>';
+                    } else {
+                        ageRes.innerHTML = '<h4>만 0세입니다.</h4>';
+                    }
+                } else{
+                    ageRes.innerHTML = '<h4>만 0세입니다.</h4>';
+                }
+            } else {
+                if (thisMonth > ageMonth){
+                    ageRes.innerHTML = `<h4>만 ${thisYear - ageYear}세입니다.</h4>`;
+                }else if (thisMonth === ageMonth){
+                    if (today < ageDay) {
+                        ageRes.innerHTML = `<h4>만 ${thisYear - ageYear - 1}세입니다.</h4>`;
+                    } else {
+                        ageRes.innerHTML = `<h4>만 ${thisYear - ageYear}세입니다.</h4>`;
+                    }
+                } else {
+                    ageRes.innerHTML = `<h4>만 ${thisYear - ageYear - 1}세입니다.</h4>`;
+                }
+            }
+        }
+
+        function leapYear() {
+            const year = Number(document.getElementById('year').value);
+            yearRes = document.getElementById('yearRes');
+            if (year % 400 === 0) {
+                yearRes.innerHTML = `<h4>${year}년은 윤년입니다.</h4>`;
+            } else if (year % 100 === 0) {
+                yearRes.innerHTML = `<h4>${year}년은 평년입니다.</h4>`;
+            } else if (year % 4 === 0) {
+                yearRes.innerHTML = `<h4>${year}년은 윤년입니다.</h4>`;
+            } else {
+                yearRes.innerHTML = `<h4>${year}년은 평년입니다.</h4>`;
+            }
+
+        }
+        function cls() {
+            const score = Number(document.getElementById('score').value);
+            scoreRes = document.getElementById('scoreRes');
+            switch (parseInt(score/10)) {
+                case 10:
+                    scoreRes.innerHTML = '<h4>A학점입니다.</h4>';
+                    break;
+                case 9:
+                    scoreRes.innerHTML = '<h4>A학점입니다.</h4>';
+                    break;
+                case 8:
+                    scoreRes.innerHTML = '<h4>B학점입니다.</h4>';
+                    break;
+                case 7:
+                    scoreRes.innerHTML = '<h4>C학점입니다.</h4>';
+                    break;
+                case 6:
+                    scoreRes.innerHTML = '<h4>D학점입니다.</h4>';
+                    break;
+                default:
+                    scoreRes.innerHTML = '<h4>F학점입니다.</h4>';
+            }
+        }
+    </script>
+</head>
+
+<body style="margin: 50px;">
+    <div>
+        <input type="text" id="age" placeholder="생년월일 입력(숫자8개만)">
+        <button onclick="age()">만 나이</button>
+        <br>
+        <p id="ageRes"></p>
+    </div>
+    <div>
+        <input type="text" id="year" placeholder="연도를 입력(숫자만)">
+        <button onclick="leapYear()">윤년 확인</button>
+        <br>
+        <p id="yearRes"></p>
+    </div>
+    <div>
+        <input type="text" id="score" placeholder="시험점수 입력(0~100)">
+        <button onclick="cls()">학점 확인</button>
+        <br>
+        <p id="scoreRes"></p>
+    </div>
+</body>
+</html>
