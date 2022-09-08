@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dia() {
+            const num = parseInt(document.getElementById('num').value);
+            let blank = parseInt(num/2);
+            let diaRes = document.getElementById('diaRes');
+            let result = '<h1>'
+            for (let i = 0; i < num; i++) {
+                if (i <= blank - 1) {
+                    stars = '';
+                    for (let k=blank-i; k>=1; k--) {
+                        stars += '&nbsp;';
+                    }
+                    let x = (i+1)*2 - 1
+                    for (let k = 1; k <= x; k++){
+                        stars += '*';
+                        }
+                    result += stars;
+                    result += '<br>';
+                } else if (i === blank) {
+                    stars = '';
+                    for (let k=1; k<=num; k++){
+                        stars += '*';
+                    }
+                    result += stars;
+                    result += '<br>';
+                } else {
+                    stars = '';
+                    for (let k=1; k<=i-blank; k++) {
+                        stars += '&nbsp;';
+                    }
+                    let x = (num-i)*2 - 1;
+                    for (let k = 1; k <= x; k++) {
+                        stars += '*';
+                    }
+                    result += stars;
+                    result += '<br>';
+                }
+            }
+            diaRes.innerHTML=result + '</h1>';
+        }
+    </script>
+</head>
+<body style="margin:100px">
+    <div>
+        <input type="text" id="num" placeholder="홀수 입력">
+        <button onclick="dia()">다이아 찍기</button>
+        <hr>
+        <pre id="diaRes"></pre>
+        <!-- &nbsp; -->
+    </div>
+    
+</body>
+</html>
