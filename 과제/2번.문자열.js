@@ -17,5 +17,5 @@ const text = "the grown-ups' response, this time, was to advise me to lay aside 
 // console.log(result);
 
 
-// 메서드 체이닝, filter
+// 메서드 체이닝, filter - 선생님 힌트
 console.log(text.replace(/[^a-z ]/g, '').split(' ').filter(x => x =='the').length);
