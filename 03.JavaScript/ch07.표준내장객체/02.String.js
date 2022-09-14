@@ -62,6 +62,7 @@ newStr = newStr.replace(/ +/g, ' ');
 console.log(newStr);
 
 // 문자열의 일부분을 추출
+console.log('여기');
 let str = 'Apple, Banana, Kiwi';
 console.log(str.slice(7,13)); // 시작 인덱스, 끝 인덱스(마지막 제외, 파이썬처럼)
 console.log(str.slice(7));    // [7:] 처럼 인식됨.
