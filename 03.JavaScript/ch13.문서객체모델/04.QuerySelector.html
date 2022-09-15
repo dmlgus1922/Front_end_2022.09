@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+    <script>
+        window.onload = function() {
+            // 첫 번째 h1태그 찾기
+            const h1 = document.querySelector('h1');
+            h1.style.backgroundColor = 'yellow';
+
+            // 모든 h1 태그 찾기
+            const h1s = document.querySelectorAll('h1'); 
+            console.log(typeof h1s); // 배열이다.
+            for (let header of h1s) {
+                header.style.color = 'red';
+            }
+            
+            // 클래스로 찾기
+            const last = document.querySelector('.last');
+            last.innerHTML = 'From Javascript';
+            
+            const last1 = document.getElementsByClassName('last');
+            console.log(last1[0]);
+            last1[0].style.backgroundColor = 'gray';
+
+        }
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1>Header 1</h1>
+    <h1>Header 1</h1>
+    <h1 class="last">Header 1</h1>
+</body>
+</html>

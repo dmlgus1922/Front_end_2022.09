@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 조작</title>
+    <script>
+        window.onload = function () {
+            const image = document.getElementById('image');
+            image.src = 'https://img.seoul.co.kr/img/upload/2022/03/19/SSI_20220319133828_O2.jpg';
+            image.width = 300;
+            // image.height = 300;
+            image.setAttribute('height',300);
+            const height = image.getAttribute('height');
+            const width = image.getAttribute('width');
+            const info = `너비: ${width} 높이: ${height}`;
+            const p = document.querySelector('p');
+            p.innerHTML = info;
+        };
+    </script>
+</head>
+
+<body>
+    <img src="" alt="" id="image">
+    <p></p>
+</body>
+</html>
