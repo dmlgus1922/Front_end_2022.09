@@ -7,6 +7,18 @@
     <title>과제 웹 구현</title>
     <script>
         window.onload = function () {
+            let num = 3;
+            let prevent = document.getElementById('show');
+            prevent.innerHTML = num;
+            const si = setInterval(() => {
+                num--
+                let prevent = document.getElementById('show');
+                prevent.innerHTML = num;
+            }, 1000);
+            setTimeout(() => {
+                const prevent = document.getElementById('show');
+                document.body.removeChild(prevent);
+            }, 3000);
             const button1 = document.getElementById('btn1');
             button1.addEventListener('click', () => {
                 let input = document.getElementById('input1').value;
@@ -56,7 +68,9 @@
     </script>
 </head>
 <body style="margin: 50px;">
-    
+    <div id="show" style="height: 800px; background-color:white; 
+                        margin: 200px; font-size: 100px; 
+                        font-weight: bold; text-align: center;"></div>
     <div id="q1"> 
         <h3>Q1. 2의 제곱수 구하기 (2번, 끝에서 2번 제외)</h3>
         공백을 기준으로 두 정수를 입력하세요. <br>
