@@ -20,6 +20,7 @@ const cars = ['buick skylark 320', 'plymouth satellite', 'amc rebel sst', 'ford 
 
 
 // map - 선생님 힌트
-let manufacturer2 = cars.map(x => x.split(' ')[0]);
-let model2 = cars.map(x => x.split(' ').slice(1).join(' '));
-console.log(manufacturer2, model2);
+const manufacturer2 = cars.map(x => x.split(' ')[0]);
+const model2 = cars.map(x => x.split(' ').slice(1).join(' '));
+const model22 = cars.map(x => x.substring(x.indexOf(' ') + 1));
+console.log(manufacturer2, model22);

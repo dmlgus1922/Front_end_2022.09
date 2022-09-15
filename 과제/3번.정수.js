@@ -24,12 +24,13 @@ for (let i of num1Set) {
     }
 }
 
+
 console.log(`${num1}과 ${num2}의 공약수는\n`, result1);
 
 
 
 // 배열 사용(indexOf 메소드)
-/* const num1Arr = [], num2Arr = [];
+const num1Arr = [], num2Arr = [];
 
 for (let i=1; i<=num1; i++) {
     if (num1 % i == 0)
@@ -48,5 +49,8 @@ for (let i of num1Set) {
     }
 }
 
+let cd = num1Arr.filter(function(val){ // value, index 중에 val만 쓰는 것
+    return num2Arr.includes(val);  // 불린이 옴. Array의 includes메서드
+});
+console.log(cd);
 console.log(`${num1}과 ${num2}의 공약수는\n`, result2);
- */

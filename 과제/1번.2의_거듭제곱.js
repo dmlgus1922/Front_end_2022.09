@@ -7,8 +7,8 @@
 
 function makeNumber() {
     while (true) {
-        let num1 = Math.ceil(Math.random() * 20);
-        let num2 = Math.ceil(Math.random() * 20 + 10);
+        let num1 = Math.ceil(Math.random() * 20);  // 1 ~ 20
+        let num2 = Math.ceil(Math.random() * 21 + 9); // 10 ~ 30
         if (num2 - num1 >= 4)
             return [num1, num2];
     }
