@@ -21,7 +21,7 @@
     
             // 첫 화면에만 보여지는 시간
             const today1 = new Date();
-            
+
             const year1 = today1.getFullYear();
             const month1 = today1.getMonth() + 1 < 10 ? '0' + (today1.getMonth() + 1) : today1.getMonth() + 1;
             const dayNum1 = today1.getDate() < 10 ? '0' + today1.getDate() : today1.getDate();
@@ -56,6 +56,9 @@
                 h1Date.innerHTML = date;
                 h1Clock.innerHTML = clock;
             },1000);
+            // setTimeout(() => {
+            //     clearInterval(si);
+            // }, 10000);
         }
     </script>
 </head>
