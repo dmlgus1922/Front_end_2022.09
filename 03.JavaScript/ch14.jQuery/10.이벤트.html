@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 처리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script>
+        $(document).ready(function() {
+            $('h1').on('click', function(event) {
+                alert($(this).text());  // 이벤트가 발생한 h1이 this가 됨
+            });
+            /* $('h1').on('mouseover', function(e) {
+                $(this).css('backgroundColor','yellow');
+                $(this).on('mouseout', function(e) {
+                    $(this).css('backgroundColor','white');
+                });
+            }); */
+            $('h1')
+                .on('mouseover', function(e) {$(this).css('backgroundColor','yellow');})
+                .on('mouseout', function(e) {$(this).css('backgroundColor','white');}); 
+                // 이벤트도 메서드 체이닝이 가능
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1 style="color:red;">Header A</h1>
+    <h1>Header B</h1>
+</body>
+</html>

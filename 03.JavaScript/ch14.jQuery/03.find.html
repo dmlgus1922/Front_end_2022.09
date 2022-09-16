@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 선택</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script>
+        /* window.onload = function() {
+            const lis = document.getElementsByClassName('foreign');
+            for (let li of lis) {
+                li.style.backgroundColor = 'gray'; 
+            }
+        } */
+        // js를 사용하려면 반복문을 써야 한다. 반면 jQuery는 더 간단
+        // 여러개의 노드에 대한 변경이 가능하다.
+        $(document).ready(function() {
+            // find = 자식 찾기
+            $('#fruits').find('.national').css('backgroundColor', 'yellow');
+            $('#food').find('.foreign').css('color', 'red');
+            $('.foreign').css('backgroundColor','beige');
+        });
+    </script>
+</head>
+<body>
+    <ul id="fruits"> 내가 좋아하는 과일
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <hr>
+    <ul id="food"> 내가 좋아하는 음식
+        <li class="national">김치</li>
+        <li class="national">갈비찜</li>
+        <li class="foreign">파스타</li>
+    </ul>
+</body>
+</html>

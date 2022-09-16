@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자 조작</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script>
+        $(document).ready(function() {
+            alert($('h1').text()); // 모두 나옴
+            alert($('h1').html()); // 첫 번째 하나만 나옴
+            $('h1').text('text() method로 변경'); // 모든 h1태그의 내용 바꿈
+            $('h1').html('html() method로 변경'); // 마찬가지
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1>Header A</h1>
+    <h1>Header B</h1>
+    <h1>Header C</h1>
+</body>
+</html>

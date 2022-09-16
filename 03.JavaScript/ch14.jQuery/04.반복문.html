@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 반복</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script>
+        $(document).ready(function() {
+            /*const lis = $('li');
+            for (let i=0; i<lis.length; i++) {
+                const li = lis.get(i);
+                if (i % 2 == 0)
+                    $(li).css('color','red');
+                else
+                    $(li).css('backgroundColor','beige');
+            }
+            */
+        // js array forEach와 비교하면 파라미터 순서가 반대로 되어 있다
+            $('li').each(function(index, element) { 
+                if (index % 2 == 0)
+                    $(this).css('color','red');
+                else
+                    $(this).css('backgroundColor','beige');
+            });
+
+        // 클래스가 national인 것의 폰트 크기를 30px, 20px로 번갈아가면서 변경
+            $('.national').each(function(idx, elem) {
+                if (idx % 2 == 0)
+                    $(elem).css('fontSize','30px');
+                else
+                    $(elem).css('fontSize','20px');
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="fruits"> 내가 좋아하는 과일
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+    </ul>
+    <hr>
+    <ul id="food"> 내가 좋아하는 음식
+        <li class="national">김치</li>
+        <li class="national">갈비찜</li>
+        <li class="foreign">파스타</li>
+    </ul>
+</body>
+</html>
