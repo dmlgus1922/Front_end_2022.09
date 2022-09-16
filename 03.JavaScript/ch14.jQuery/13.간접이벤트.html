@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간접 이벤트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script>
+        $(document).ready(function() {
+            $('body').on('click', 'h1', function(e) { // 'h1'태그에서 클릭 이벤트가 발생할 때
+                $('<h1></h1>').text($(this).text()).appendTo('body');
+                // 부모에서 간접 실행하므로 모든 h1태그가 해당됨 
+            });
+        });
+    </script>
+</head>
+<body style="margin: 50px;">
+    <h1 class="header">Header</h1>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제 웹 구현</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- google jquery cdn -> jQuery 3.x 스니펫:-->
+    <script src="23.연습문제.js"></script>
+</head>
+<body style="margin: 50px;">
+    <div id="prevent" style="height: 800px; background-color:white; 
+                        margin: 200px; font-size: 100px; 
+                        font-weight: bold; text-align: center;"></div>
+
+    <div id="Q">
+        <div id="q1"> 
+            <h3>Q1. 2의 제곱수 구하기 (2번, 끝에서 2번 제외)</h3>
+            공백을 기준으로 두 정수를 입력하세요. <br>
+            첫 번째 정수는 10~20, 두 번째 정수는 10~30이며, <br>
+            두 번째 정수는 첫 번째 정수보다 적어도 4이상 커야합니다.
+            <hr>
+            <div class="inpAns1">
+                <input type="text" placeholder="두 정수를 입력하세요" id="input1">
+                <button id="btn1">입력</button>
+                <h4 id="a1"></h4>
+            </div>
+            <button id="btnShow1">보이기</button>
+            <button id="btnHide1">감추기</button>
+        </div>
+        <br>
+        
+        <div id="q2">
+            <h3>Q2. the 찾기</h3>
+            <p>문자열을 입력으로 받습니다.<br>
+                문자열에서 'the'의 개수를 출력하는 프로그램을 만드세요.<br>
+                단, 모든 문자가 소문자인 'the'만 찾으면 되며 
+                'them', 'there', 'their' 등은 포함하지 않아야 합니다.</p>
+            <hr>
+            <div class="inpAns2">
+                <textarea id="input2" cols="100" rows="10"></textarea>
+                <button id="btn2">입력</button>
+                <h4 id="a2"></h4>
+            </div>
+            <button id="btnShow2">보이기</button>
+            <button id="btnHide2">감추기</button>
+        </div>
+        <br>
+        <div id="q3">
+            <h3>Q3. 공약수 구하기</h3>
+            공백을 기준으로 두 정수를 입력하세요. <br>
+            두 정수 모두 10이상 100이하의 숫자입니다.
+            <hr>
+            <div class="inpAns3">
+                <input type="text" placeholder="두 정수를 입력하세요" id="input3">
+                <button id="btn3">입력</button>
+                <h4 id="a3"></h4>
+            </div>
+            <button id="btnShow3">보이기</button>
+            <button id="btnHide3">감추기</button>
+            
+        </div>
+    </div>
+</body>
+</html>
