@@ -17,31 +17,24 @@ $(document).ready(function() {
     },3000);
 
     // 입력, 정답창 보이고 숨기기
-    $('.inpAns1,.inpAns2 ,.inpAns3').hide();
+    $('.inpAns1,.inpAns2,.inpAns3').hide();
 
-    $('#btnShow1').click(function() {
-        $('.inpAns1').show();
+    $('#btnShow1, #btnShow2, #btnShow3').click(function(e) {
+        console.log($(this)[0].id);
+        const id = $(this)[0].id;
+        const idNum = id[id.length-1];
+        $('.inpAns'+idNum).show();
     });
-    $('#btnHide1').click(function() {
-        $('.inpAns1').hide();
+
+    $('#btnHide1, #btnHide2, #btnHide3').click(function(e) {
+        const id = $(this)[0].id;
+        const idNum = id[id.length-1];
+        $('.inpAns'+idNum).hide();
     });
     
-    $('#btnShow2').click(function() {
-        $('.inpAns2').show();
-    });
-    $('#btnHide2').click(function() {
-        $('.inpAns2').hide();
-    });
-
-    $('#btnShow3').click(function() {
-        $('.inpAns3').show();
-    });
-    $('#btnHide3').click(function() {
-        $('.inpAns3').hide();
-    });
 
     // 1번 문제 풀이
-    $('#btn1').click(function() {
+    $('#btn1').click(function(e) {
         let input = $('#input1').val();
         input = input.replace(/ +/g, ' ').split(' ');
         if (input.length != 2){
@@ -66,7 +59,7 @@ $(document).ready(function() {
     });
 
     // 2번 문제풀이
-    $('#btn2').click(function() {
+    $('#btn2').click(function(e) {
         let input = $('#input2').val();
         input = input.replace(/[^a-z]/g, ' ').replace(/ +/g, ' ').split(' ');
         let count = 0;
@@ -78,7 +71,7 @@ $(document).ready(function() {
     });
     
     // 3번 문제풀이
-    $('#btn3').click(function() {
+    $('#btn3').click(function(e) {
         let input = $('#input3').val();
         input = input.replace(/ +/g, ' ').split(' ');
         if (input.length != 2) {
@@ -87,7 +80,7 @@ $(document).ready(function() {
         }
         const num1 = parseInt(input[0]), num2 = parseInt(input[1]);
         if (num1 < 10 || num1 > 100 || num2 < 10 || num2 > 100){
-            alert('숫자 범위를 지켜주세요')
+            alert('숫자 범위를 지켜주세요');
             return;
         }
         const result = [];
