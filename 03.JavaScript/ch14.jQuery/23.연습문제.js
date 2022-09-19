@@ -1,20 +1,54 @@
 $(document).ready(function() {
     // 카운트 다운
-
+    let count = 3;
+    const show = $('#show');
+    function disp(num) {
+        // const img = document.createElement('img');
+        $('<img></img>')
+            .attr('src', '../ch14.jQuery/digits/'+num+'.svg')
+            .attr('width','800')
+            .attr('id','second')
+            .css({marginTop:'30px',marginBottom:'200px',marginLeft:'200px'})
+            .appendTo(show);
+        // img.setAttribute('src', '../ch14.jQuery/digits/'+num+'.svg');
+        // img.setAttribute('width', '800');
+        // img.setAttribute('id', 'second');
+        // img.style.marginTop = '30px';
+        // img.style.marginBottom = '200px';
+        // img.style.marginLeft = '200px';
+        // show.appendChild(img);
+    }
+    function hide() {
+        // const sec = $('#second');
+        show.children().remove();
+    }
+    function countDown() {
+        disp(count--);
+        let interval = setInterval(() => {
+            hide();
+            if (count != 0) 
+                disp(count--);
+        }, 1000);
+        setTimeout(() => {
+            clearInterval(interval);
+            $('#Q').show();
+        }, 3000);
+    }
+    
     $('#Q').hide(); //첫 화면 문제 전체 숨기기
+    countDown();
+    // let num = 3;
+    // $('#prevent').text(num);
+    // const si = setInterval(() => {
+    //     num--;
+    //     $('#prevent').text(num);
+    // }, 1000);
 
-    let num = 3;
-    $('#prevent').text(num);
-    const si = setInterval(() => {
-        num--;
-        $('#prevent').text(num);
-    }, 1000);
-
-    // 3초 후 문제 보이고 카운트다운 div 숨기기
-    setTimeout(() => {
-        $('#Q').show();
-        $('#prevent').hide();
-    },3000);
+    // // 3초 후 문제 보이고 카운트다운 div 숨기기
+    // setTimeout(() => {
+    //     $('#Q').show();
+    //     $('#prevent').hide();
+    // },3000);
 
     // 입력, 정답창 보이고 숨기기
     $('.inpAns1,.inpAns2,.inpAns3').hide();
