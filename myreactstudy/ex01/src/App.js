@@ -27,9 +27,9 @@ function App() {  // App이 부모 컴포넌트
       {/* header를 미리 만들고 활성화 */}
       <Header></Header> 
       <Routes>
-      <Route path='/login' element={<Ex04></Ex04>}></Route>
-      <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/About' element={<About></About>}></Route>
+        <Route path='/login' element={<Ex04_></Ex04_>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/About' element={<About></About>}></Route>
       </Routes>
     </>
   );

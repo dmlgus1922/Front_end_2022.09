@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function Ex04_() {
+    const nav = useNavigate();
+    // useNavigate -> 주소 경로를 입력받아 요청해줄 수 있는 Hook
     const [result, setResult] = useState('');
     const [id, setId] = useState();
     const [pw, setPw] = useState();
@@ -9,6 +11,7 @@ function Ex04_() {
     useEffect(function () {
         if (id == 'smhrd' && pw == '123') {
             setResult('smhrd님 환영합니다');
+            nav('/');
         } else {
             setResult('로그인실패');
         }
