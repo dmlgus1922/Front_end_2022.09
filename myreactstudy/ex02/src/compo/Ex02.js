@@ -10,6 +10,7 @@ function Ex02() {
 
     function addArray() {
         document.getElementById('todo').value = '';
+
         // 리액트에서 배열에 값을 추가할 때는 push가 아닌 concat을 쓴다
         setTodoArray(todoArray.concat(todo));
         // 불변성 유지: 상태값을 업데이트할 때는 기존 상태를 그대로 두며
@@ -17,6 +18,9 @@ function Ex02() {
     }
 
     function deleteTodo(e) {
+        // index는 숫자
+        // e.target.value는 문자
+        // index !== e.target.value; 무조건 true 뜰 것
         setTodoArray(todoArray.filter((data, index) => {
             return index != e.target.value;
         }));
