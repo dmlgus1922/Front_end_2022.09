@@ -3,7 +3,7 @@ import {Link, useSearchParams} from 'react-router-dom'
 function About() {
     const [params, setParamsId] = useSearchParams();
     
-    // 쿼리스트링으로 넘긴 데이터는 paramsId에 저장되어 있다.
+    // 쿼리스트링으로 넘긴 데이터는 params에 저장되어 있다.
     const id = params.get('id');
     const nick = params.get('nick');
     console.log(params)
