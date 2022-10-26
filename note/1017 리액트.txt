@@ -33,3 +33,17 @@ JSX 문법
 
 싱글 페이지 어플리케이션
 -> html 하나로 컴포넌트를 교체해감으로써 화면을 구성하는 방법
+
+
+리덕스 설치
+npm i redux
+npm i react-redux
+
+리덕스
+	- 예측 가능한 상태의 저장소
+
+	상태값을 바꾸는 reducer
+	
+	어쩌고 dispatch, subscribe, getState
+
+	어쩌고 action, render
