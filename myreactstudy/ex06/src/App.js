@@ -1,15 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Item1 from './compo/Item1';
 import Item2 from './compo/Item2';
 import Item3 from './compo/Item3';
 import Right1 from './compo/Right1';
-
 import {useState} from 'react';
 
 // 리덕스 재료 준비
 import {createStore} from 'redux';
-// createStore: state값을 저장하는 역할
+// createStore: state값을 저장하는 역할 
 import {Provider} from 'react-redux'
 // Provider: state 값을 어떤 컴포넌트와 공유, 제공할 건지를 정의
 
