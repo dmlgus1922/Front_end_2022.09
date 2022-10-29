@@ -36,7 +36,6 @@ function reducer(currentState, action) {
     }
   }
   // 변경 후 반환
-  console.log(currentState);
   return {...currentState}
 }
 
